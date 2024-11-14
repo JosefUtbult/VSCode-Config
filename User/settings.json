@@ -1,5 +1,6 @@
 {
-    // ---------------- Color scheme ---------------- 
+    // ---------------- Color scheme/Font ---------------- 
+    "editor.fontFamily": "'Lilex Nerd Font Mono', Consolas, 'Courier New', monospace",
     "workbench.colorTheme": "Catppuccin Mocha",
     "catppuccin.accentColor": "peach",
     "catppuccin.colorOverrides": {
@@ -25,15 +26,21 @@
 
     // Disable handling of keys for left-side menu navagation
     "vim.handleKeys": {
-        "<C-n>": false,
         "<C-f>": false,
         "<C-g>": false,
         "<C-q>": false,
-        "<C-x>": false
+        "<C-x>": false,
+        "<C-l>": false,
+        "<C-r>": false,
+        "<C-enter>": false
     },
 
     "vim.normalModeKeyBindings": [
-        // Tab behaviour
+        // Open quickswitcher
+        {
+            "before": ["<leader>", "f", "d"],
+            "commands": ["workbench.action.quickOpen"]
+        },
         // Open a new blank tab
         {
             "before": ["<leader>", "n"],
@@ -91,6 +98,46 @@
             "before": ["Y", "Y"],
             "after": ["\"", "+", "y", "y"]
         },
+        // Navigate to marker
+        {
+            "before": ["g", "m"],
+            "after": ["`"]
+        },
+        // Go to next/previous diagnostics
+        {
+            "before": ["]", "d"],
+            "commands": ["editor.action.marker.nextInFiles"],
+            "silent": true
+        },
+        {
+            "before": ["[", "d"],
+            "commands": ["editor.action.marker.prevInFiles"],
+            "silent": true
+        },
+        // Go to next/previous search result
+        {
+            "before": ["[", "s"],
+            "commands": ["search.action.focusPreviousSearchResult"]
+        },
+        {
+            "before": ["]", "s"],
+            "commands": ["search.action.focusNextSearchResult"]
+        },
+        {
+            // Toggle breakpoint
+            "before": ["<leader>", "d", "b"],
+            "commands": ["editor.debug.action.toggleBreakpoint"]
+        },
+        {
+            // Go to references
+            "before": ["g", "r"],
+            "commands": ["editor.action.referenceSearch.trigger"]
+        },
+        {
+            // Rename
+            "before": ["<leader>", "r", "n"],
+            "commands": ["editor.action.rename"]
+        }
     ],
 
     "vim.insertModeKeyBindings": [
@@ -119,4 +166,7 @@
     "security.allowedUNCHosts": [
         "wsl.localhost"
     ],
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "cmake.buildDirectory": "${workspaceFolder}/cmake-build"
 }

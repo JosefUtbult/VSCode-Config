@@ -1,6 +1,11 @@
 christianalexander.flip
+catppuccin.catppuccin-vsc
+ms-vscode-remote.remote-wsl
 ms-vscode.cmake-tools
 ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
+ms-vscode.makefile-tools
+ms-vscode.vscode-serial-monitor
 twxs.cmake
+vscodevim.vim

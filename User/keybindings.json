@@ -1,14 +1,15 @@
 [
     {
-        // Toggle Explorer view with Ctrl+N
+        // Toggle Explorer view with Ctrl+N when NOT in the Search panel
         "key": "ctrl+n",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'"
+        "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer' && !searchViewletVisible"
     },
     {
+        // Open Explorer with Ctrl+N when NOT in the Search panel
         "key": "ctrl+n",
         "command": "workbench.view.explorer",
-        "when": "!sideBarVisible || activeViewlet != 'workbench.view.explorer'"
+        "when": "!sideBarVisible || (activeViewlet != 'workbench.view.explorer' && !searchViewletVisible)"
     },
     {
         // Toggle Search view with Ctrl+F
@@ -53,5 +54,69 @@
         "key": "ctrl+x",
         "command": "workbench.view.extensions",
         "when": "!sideBarVisible || activeViewlet != 'workbench.view.extensions'"
+    },
+    {
+        // Toggle Problems view with Ctrl+P
+        "key": "ctrl+r",
+        "command": "workbench.actions.view.problems",
+        "when": "panelVisible && activePanel == 'workbench.panel.markers'"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.panel.markers.view.focus",
+        "when": "!panelVisible || activePanel != 'workbench.panel.markers'"
+    },
+    {
+        // Toggle Output view with Ctrl+L, without changing focus
+        "key": "ctrl+l",
+        "command": "workbench.action.output.toggleOutput"
+    },
+    {
+        // Toggle Terminal with Ctrl+Enter
+        "key": "ctrl+enter",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "panelVisible && activePanel == 'workbench.panel.terminal'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "!panelVisible || activePanel != 'workbench.panel.terminal'"
+    },
+    // Vim navigation in quick select
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    // Vim navigation in search menu
+    {
+        // Go to the next search result with ]s
+        "key": "] s",
+        "command": "search.action.focusNextSearchResult",
+        "when": "searchViewletVisible && searchViewletFocus"
+    },
+    {
+        // Go to the previous search result with [s
+        "key": "[ s",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "searchViewletVisible && searchViewletFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "-workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.tasks.runTask"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Make Debug and Load ELF"
     }
 ]
