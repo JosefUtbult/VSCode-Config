@@ -1,0 +1,57 @@
+[
+    {
+        // Toggle Explorer view with Ctrl+N
+        "key": "ctrl+n",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.view.explorer",
+        "when": "!sideBarVisible || activeViewlet != 'workbench.view.explorer'"
+    },
+    {
+        // Toggle Search view with Ctrl+F
+        "key": "ctrl+f",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible && activeViewlet == 'workbench.view.search'"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "workbench.view.search",
+        "when": "!sideBarVisible || activeViewlet != 'workbench.view.search'"
+    },
+    {
+        // Toggle Source Control view with Ctrl+G
+        "key": "ctrl+g",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible && activeViewlet == 'workbench.view.scm'"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "workbench.view.scm",
+        "when": "!sideBarVisible || activeViewlet != 'workbench.view.scm'"
+    },
+    {
+        // Toggle Debug view with Ctrl+D
+        "key": "ctrl+q",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible && activeViewlet == 'workbench.view.debug'"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "workbench.view.debug",
+        "when": "!sideBarVisible || activeViewlet != 'workbench.view.debug'"
+    },
+    {
+        // Toggle Extensions view with Ctrl+X
+        "key": "ctrl+x",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible && activeViewlet == 'workbench.view.extensions'"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "workbench.view.extensions",
+        "when": "!sideBarVisible || activeViewlet != 'workbench.view.extensions'"
+    }
+]
