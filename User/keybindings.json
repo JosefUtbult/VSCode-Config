@@ -56,13 +56,13 @@
         "when": "!sideBarVisible || activeViewlet != 'workbench.view.extensions'"
     },
     {
-        // Toggle Problems view with Ctrl+P
-        "key": "ctrl+r",
+        // Toggle Problems view with Ctrl+Z
+        "key": "ctrl+z",
         "command": "workbench.actions.view.problems",
         "when": "panelVisible && activePanel == 'workbench.panel.markers'"
     },
     {
-        "key": "ctrl+r",
+        "key": "ctrl+z",
         "command": "workbench.panel.markers.view.focus",
         "when": "!panelVisible || activePanel != 'workbench.panel.markers'"
     },
@@ -115,7 +115,7 @@
         "command": "workbench.action.tasks.runTask"
     },
     {
-        "key": "ctrl+shift+v",
+        "key": "ctrl+shift+alt+b",
         "command": "workbench.action.tasks.runTask",
         "args": "Make Debug and Load ELF"
     }

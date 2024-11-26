@@ -31,7 +31,7 @@
         "<C-q>": false,
         "<C-x>": false,
         "<C-l>": false,
-        "<C-r>": false,
+        "<C-z>": false,
         "<C-enter>": false
     },
 
@@ -129,14 +129,48 @@
             "commands": ["editor.debug.action.toggleBreakpoint"]
         },
         {
+            // Peek definition
+            "before": ["g", "p", "d"],
+            "commands": ["editor.action.peekDefinition"]
+        },
+        {
+            "before": ["g", "h"],
+            "commands": ["editor.action.showDefinitionPreviewHover"]
+        },
+        {
+            "before": ["g", "i"],
+            "commands": ["editor.action.goToImplementation"]
+        },
+        {
+            "before": ["g", "p", "i"],
+            "commands": ["editor.action.peekImplementation"]
+        },
+        {
+            "before": ["g", "q"],
+            "commands": ["editor.action.quickFix"]
+        },
+        {
             // Go to references
             "before": ["g", "r"],
             "commands": ["editor.action.referenceSearch.trigger"]
         },
         {
+            "before": ["g", "t"],
+            "commands": ["editor.action.goToTypeDefinition"]
+        },
+        {
+            "before": ["g", "p", "t"],
+            "commands": ["editor.action.peekTypeDefinition"]
+        },
+        {
             // Rename
             "before": ["<leader>", "r", "n"],
             "commands": ["editor.action.rename"]
+        },
+        {
+            // Format document
+            "before": ["<leader>", "g", "f"],
+            "commands": ["editor.action.formatDocument"]
         }
     ],
 
@@ -162,11 +196,17 @@
         "workbench.action.tasks.configureTaskRunner",
         "workbench.action.tasks.runTask"
     ],
-    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.revealIfOpen": true,
     "security.allowedUNCHosts": [
         "wsl.localhost"
     ],
     "explorer.confirmDelete": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "cmake.buildDirectory": "${workspaceFolder}/cmake-build"
+    "cmake.buildDirectory": "${workspaceFolder}/cmake-build",
+    "window.openFilesInNewWindow": "off",
+    "vscode-serial-monitor.loggingVerbosity": "debug",
+    "vscode-serial-monitor.logFileDirectory": "${workspaceRoot}/log"
 }
